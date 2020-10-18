@@ -1,0 +1,24 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "App that lets you create a burger and DEVOUR it.",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameslee70/burger.git"
+  },
+  "author": "James Lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jameslee70/burger/issues"
+  },
+  "homepage": "https://github.com/jameslee70/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}

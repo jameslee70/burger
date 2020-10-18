@@ -1,0 +1,19 @@
+body {
+    background: #DAD299; 
+    background: -webkit-linear-gradient(to right, #B0DAB9, #DAD299);
+    background: linear-gradient(to right, #B0DAB9, #DAD299);
+
+    font-family: 'Rubik', sans-serif;
+
+    padding: 10px;
+
+}
+
+h1 {
+    font-weight: 900;
+}
+
+li {
+    padding: 10px;
+    font-size: larger;
+}

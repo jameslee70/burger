@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col l12 m12 s12 center-align">
+        <img class="burger" src="../public/assets/img/burger.png" alt="A Burger" height="236" width="319">
+        <h1 class="center">Eat-Da-Burger</h1>
+    </div>
+
+
+    <div class="col l6 m12 s12 center-align">
+        <h3>Burger Creations</h3>
+        <hr>
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers}}
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="col l6 m12 s12 center-align">
+        <h3>Devoured Burgers</h3>
+        <hr>
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            <li>
+                {{burger_name}}
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="col l4 offset-l4 m12 s12 center-align">
+        <div class="row">
+            <h3>Add a Burger</h3>
+        </div>
+
+        <form class="burgerAdd">
+            <div class="center-align">
+                <label for="burgerName">Burger Name:</label>
+                <input type="text" id="burgerName" name="name">
+            </div>
+
+            <p>
+                <label>
+                    <input id="eaten" type="checkbox" />
+                    <span>Devoured!</span>
+                </label>
+            </p>
+
+            <button class="btn waves-effect waves-light" type="submit">Add Burger <i
+                    class="material-icons right">add_circle_outline</i></button>
+        </form>
+    </div>
+</div>

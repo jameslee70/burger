@@ -1,24 +1,25 @@
 {
-  "name": "burger",
+  "name": "employeetracker",
   "version": "1.0.0",
-  "description": "App that lets you create a burger and DEVOUR it.",
-  "main": "server.js",
+  "description": "Tracks all employees. Allows you to view specifiec details for employees and departments.",
+  "main": "employees.js",
   "scripts": {
-    "test": "npm test"
+    "start": "node employees.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jameslee70/burger.git"
+    "url": "git+https://github.com/jameslee70/Homework-Assignment-12"
   },
   "author": "James Lee",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jameslee70/burger/issues"
+    "url": "https://github.com/jameslee70/Homework-Assignment-12/issues"
   },
-  "homepage": "https://github.com/jameslee70/burger#readme",
+  "homepage": "",
   "dependencies": {
+    "console.table": "^0.10.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.1.0",
+    "inquirer": "^7.3.3",
     "mysql": "^2.18.1"
   }
 }

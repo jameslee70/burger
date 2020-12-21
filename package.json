@@ -4,8 +4,7 @@
   "description": "App that lets you create a burger and DEVOUR it.",
   "main": "server.js",
   "scripts": {
-    "test": "npm test",
-    "start": "npm start"
+    "test": "npm test"
   },
   "repository": {
     "type": "git",

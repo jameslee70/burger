@@ -1,12 +1,12 @@
 const orm = require("../config/orm");
 
-
 const burger = {
     selectAll: function(cb) {
         orm.selectAll("burgers", function(res) {
           cb(res);
         });
     },
+    
     insertOne: function(cols, vals, cb) {
         console.log('vals higher up!!!!:', vals)
         orm.insertOne("burgers", cols, vals, function(res) {

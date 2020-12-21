@@ -1,6 +1,5 @@
 var connection = require('../config/connection');
 
-
 printQuestionMarks = (num) => {
     var arr = [];
   
@@ -13,21 +12,24 @@ printQuestionMarks = (num) => {
 
 objToSql = (ob) => {
     var arr = [];
-  r
+  
+    
     for (var key in ob) {
       var value = ob[key];
+     
       if (Object.hasOwnProperty.call(ob, key)) {
+        
         if (typeof value === "string" && value.indexOf(" ") >= 0) {
           value = "'" + value + "'";
         }
-
+        
         arr.push(key + "=" + value);
       }
     }
-
+  
+    
     return arr.toString();
 }
-
 const orm = {
     selectAll: function(tableInput, cb) {
         var queryString = `SELECT * FROM ${tableInput};`;
@@ -65,6 +67,5 @@ const orm = {
         });
     },
 };
-
 
 module.exports = orm;

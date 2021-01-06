@@ -1,50 +1,63 @@
-// start
 $(function() {
-  $(".devourBtn").on("click", function(event) {
-    let id = $(this).data("id");
-    var newDevour = $(this).data(newDevour);
-    console.log('newDevour:', newDevour)
-
-    var newDevourStatus = {
-        id,
-          devoured: true
-      };
-    
-
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: newDevourStatus
-    }).then(
-      function() {
-        console.log("Burger was devoured!", newDevour);
-
-        location.reload();
-      }
-    );
-  });
-
-  $(".burgerAdd").on("submit", function(event) {
-
+  
+  $('.change-devour').on('click', function(event) {
     event.preventDefault();
-    console.log("click")
-      
-   const eaten = $('#eaten').is(":checked")
-   console.log('eaten:', eaten)
+    const id = $(this).data('id');
+    const newDevour = $(this).data('newdevour');
 
-    var newBurger = {
-      name: $("#burgerName").val().trim(),
-      devoured: $('#eaten').is(":checked")
+    const newDevouredState = {
+      devoured: newDevour,
     };
 
+   
+    $.ajax(`/api/burgers/${id}`, {
+      type: 'PUT',
+      data: newDevouredState,
+    }).then(function() {
+      console.log('changed devoured to', newDevour);
+     
+      location.reload();
+    });
+  });
 
-    $.ajax("/api/burgers", {
-      type: "POST",
-      data: newBurger
-    }).then(
-      function() {
-        console.log("created new burger");
+  $('.create-form').on('submit', function(event) {
+   
+    event.preventDefault();
+
+    const burgerValue = $('#br')
+      .val()
+      .trim();
+    if (burgerValue) {
+      const newBurger = {
+        burger_name: $('#br')
+          .val()
+          .trim(),
+        devoured: 0,
+      };
+
+      
+      $.ajax('/api/burgers', {
+        type: 'POST',
+        data: newBurger,
+      }).then(function() {
+        console.log('created new burger');
+        
         location.reload();
-      }
-    );
+      });
+    }
+  });
+
+  
+  $('.delete-burger').on('click', function(event) {
+    const id = $(this).data('id');
+
+    
+    $.ajax(`/api/burgers/${id}`, {
+      type: 'DELETE',
+    }).then(function() {
+      console.log('deleted burger', id);
+      
+      location.reload();
+    });
   });
 });
